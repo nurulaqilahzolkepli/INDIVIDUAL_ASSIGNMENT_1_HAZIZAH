@@ -1,0 +1,286 @@
+<html>
+<head>
+<title> Hazizah Hassan - Education Background </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+<!---NAVIGATION BAR START--->
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: white;
+}
+
+.topnav a {
+  float: right;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: grey;
+  color: black;
+}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: grey;
+   color: white;
+   text-align: center;
+}
+mg {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 500px;
+}
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+</head>
+<body>
+<body style="background-color:pink;">
+
+<!---NAVIGATION BAR START--->
+<div class="topnav">
+  <a class="active" href="index.html">Home</a>
+  <a href="aboutme.html">About Me</a>
+  <a href="myhobby.html">My Hobby</a>
+  <a href="educationbackground.html">Education Background</a>
+  <a href="skills.html">Skills</a>
+  <a href="contact.html">Contact</a>
+</div>
+<!---NAVIGATION BAR END--->
+
+<!---ANIMATION START--->
+<center>
+<marquee width="80%" direction="right" height="80px">
+<h2> Get to know My Education Background </h2> 
+</marquee>
+</center>
+</div>
+<!---ANIMATION END--->
+<br>
+<br>
+
+<!---CLOCK START--->
+<center>
+<canvas id="canvas" width="200" height="200"
+style="background-color:pink">
+</canvas>
+
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+</script>
+<p>“Time is the most valuable thing a man can spend”</p>
+</center>
+<!---CLOCK END--->
+
+
+<!---FOOTER START--->
+<div class="footer">
+  <p>&copy; Hazizah Hassan. All rights reserved.</p>
+</div>
+<!---FOOTER END--->
+
+<!---EDUCATION START--->
+<hr size="3" color="white" align="center">
+<p>
+<h2> <font face="Impact"> <font size="5"> <font color="#7a6174"> My Education Background </h2>
+
+<center>
+<div class="row">
+  <div class="column">
+    <img src="ASSEST/PHOTO/photo1_removebg.png" alt="sk la salle 2" style="width:150px">
+  </div>
+  <div class="column">
+    <img src="ASSEST/PHOTO/photo2-removebg.png" alt="smk diy" style="width:150px">
+  </div>
+  <div class="column">
+    <img src="ASSEST/PHOTO/photo3-removebg.png" alt="Mountains" style="width:300px">
+  </div>
+</div>
+</center>
+
+<center>
+<table border="3" height="90" width="70%">
+<colgroup>
+  <col span="1" style="background-color: #FBC1C1">
+  <col span="1" style="background-color: #F9DB7B">
+  <col span="1" style="background-color: #FB97AE">
+</colgroup>
+  <tr>
+    <td height="70" width="50%"> <center> Year</td>
+    <td> <center> Name of Institute </td>
+    <td> <center> Level of Education </td>
+  </tr>
+  <tr>
+    <td height="70" width="50%"> <center> 2015</td>
+    <td> <center> SK La Salle (2) Jinjang, KL</td>
+    <td> <center> UPSR</td>
+  </tr>
+  <tr>
+    <td height="70" width="50%"> <center> 2021</td>
+    <td> <center> SMK Dato' Ibrahim Yaacob, KL </td>
+    <td> <center> SPM </td>
+  </tr>
+  <tr>
+    <td height="70" width="50%"> <center> 2022 - Current</td>
+    <td> <center> Universiti Teknologi MARA (UiTM)</td>
+    <td> <center> Diploma in Library Management (UiTM)</td>
+  </tr>
+</table>
+</p>
+</center>
+<hr size="3" color="white" align="center">
+<!---EDUCATION END--->
+
+
+
+<!---INSTITUTE START--->
+<center> <ul>
+<h1> <font size="5"> <li>5 INOVATIF KHAS</li> </h1> 
+</ul> 
+</center>
+<a target="_blank" href="ASSEST/PHOTO/photo25.jpg">
+  <img src="ASSEST/PHOTO/photo25.jpg" alt="Forest" style="width:500px">
+</a>
+<p> <font size="5"> Click the image to see the full size of the image. This photo was taken for the 2020's School Magazine. </p>
+<p>Sekolah Menengah Kebangsaan Dato' Ibrahim Yaacob is a Sekolah Menengah Kebangsaan located at Batu 5 Jalan Ipoh, Kuala Lumpur. I went to school there since I was in the 2nd grade, that is, aged 14 to 17. I managed to get an excellent SPM result thanks to the education of my teachers. There are too many memories that I can't forget throughout my schooling here.</p>
+
+<hr size="3" color="white" align="center">
+
+<center> <ul>
+<h1> <font size="5"> <li>KIM 120 4A</li> </h1> 
+</ul> 
+</center>
+<a target="_blank" href="ASSEST/PHOTO/photo26.jpg">
+  <img src="ASSEST/PHOTO/photo26.jpg" alt="Forest" style="width:500px">
+</a>
+<p> <font size="5"> Click the image to see the full size of the image. This photo was taken for the 2022's Class Magazine. </p>
+<p>I did my diploma at Universiti Teknologi MARA (UiTM), Kedah. I have been through various ups and downs together with my classmates as well. They taught me and helped me a lot.</p>
+<br>
+<!---INSTITUTE END--->
+
+<center> <video width="700" controls>
+  <source src="ASSEST/VIDEO/vidtiktok2.mp4" type="video/mp4">
+  <source src="ASSEST/VIDEO/vidtiktok2.mp4" type="video/ogg">
+  Your browser does not support HTML video.
+</center>
+</video>
+
+<br>
+<br>
+<br> 
+</body>
+</html>
